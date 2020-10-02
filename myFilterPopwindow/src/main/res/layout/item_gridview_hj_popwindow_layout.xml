@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:text="选项一"
+        android:button="@null"
+        android:singleLine="true"
+        android:maxEms="5"
+        android:checked="true"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        android:id="@+id/checkbox_item_gridview_hj_popwindow"
+        android:textColor="@color/checkbox_text_selector_hj_popwindow"
+        android:background="@drawable/checkbox_selected_selector_hj_popwindow"
+        />
+</LinearLayout>
