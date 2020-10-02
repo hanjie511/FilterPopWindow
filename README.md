@@ -1,7 +1,7 @@
 # FilterPopWindow
 实现数据筛选并记忆选项功能的popwindow
 ## 效果图  
-![项目效果](https://hanjie-oos.oss-cn-shenzhen.aliyuncs.com/MyVideo_4.gif)  
+![项目效果](https://github.com/hanjie511/FilterPopWindow/blob/main/MyVideo_4.gif)  
 ## 在项目中引用
 ### 通过Gradle添加依赖  
 ```java  
