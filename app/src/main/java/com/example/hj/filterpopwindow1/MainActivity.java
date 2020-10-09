@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         hj.showAtLocation(mainLinear, Gravity.RIGHT,0,0);
         hj.setHJFilterPopwindowDismisListener(new HJFilterPopWindow.HJFilterPopwindowDismisListener() {
             @Override
-            public void getFilterResult(List<Map<String, Object>> list1, Map m) {
+            public void getFilterResult(List<Map<String, Object>> list1, Map m,Map m1) {
                 list=list1;
                 resultMap=m;
                 String str="姓名："+m.get("姓名")+"\n";
