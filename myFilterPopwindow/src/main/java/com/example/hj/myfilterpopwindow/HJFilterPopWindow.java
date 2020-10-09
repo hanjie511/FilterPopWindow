@@ -42,6 +42,7 @@ public class HJFilterPopWindow extends PopupWindow {
         int screenHeight = dm.heightPixels;
         int width=(int)(screenWidth*0.8);
         setWidth(width);
+        setBackgroundDrawable(context.getDrawable(R.color.white_color));
         setHeight(screenHeight);
         setOutsideTouchable(true);
     }
@@ -59,24 +60,29 @@ public class HJFilterPopWindow extends PopupWindow {
         cancel_btn_hj_popwindow=contentView.findViewById(R.id.cancel_btn_hj_popwindow);
         confirm_btn_hj_popwindow=contentView.findViewById(R.id.confirm_btn_hj_popwindow);
         myListAdapter=new MyListAdapter(context,R.layout.item_listview_hj_popwindow_layout,list);
+        listView_hj_popwindow_layout.setBackgroundColor(context.getResources().getColor(R.color.white_color));
         listView_hj_popwindow_layout.setAdapter(myListAdapter);
         confirm_btn_hj_popwindow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 list=myListAdapter.getList();
                 Map cmap=new HashMap();
+                Map cmap1=new HashMap();
                 for(Map<String,Object> m:list){
                     String str="";
+                    String code="";
                     int position=0;
                     for(MyFilter filter:(List<MyFilter>)m.get(HJFilterPopWindow.dataSource)){
                         if(filter.isSelected()){
                             str=str+filter.getName()+",";
+                            code=code+filter.getCode()+",";
                         }
                         position++;
                     }
                     cmap.put(m.get(HJFilterPopWindow.tagName),str);
+                    cmap1.put(m.get(HJFilterPopWindow.tagName),code);
                 }
-                hjFilterPopwindowDismisListener.getFilterResult(list,cmap);
+                hjFilterPopwindowDismisListener.getFilterResult(list,cmap,cmap1);
                 dismiss();
             }
         });
@@ -85,23 +91,27 @@ public class HJFilterPopWindow extends PopupWindow {
             public void onClick(View v) {
                 list=myListAdapter.getList();
                 Map cmap=new HashMap();
+                Map cmap1=new HashMap();
                 for(Map<String,Object> m:list){
                     String str="";
+                    String code="";
                     int position=0;
                     for(MyFilter filter:(List<MyFilter>)m.get(HJFilterPopWindow.dataSource)){
                         if(filter.isSelected()){
                             str=str+filter.getName()+",";
+                            code=code+filter.getCode()+",";
                         }
                         position++;
                     }
                     cmap.put(m.get(HJFilterPopWindow.tagName),str);
+                    cmap1.put(m.get(HJFilterPopWindow.tagName),code);
                 }
-                hjFilterPopwindowDismisListener.getFilterResult(list,cmap);
+                hjFilterPopwindowDismisListener.getFilterResult(list,cmap,cmap1);
                 dismiss();
             }
         });
     }
     public interface HJFilterPopwindowDismisListener{
-        void getFilterResult(List<Map<String, Object>> list,Map m);
+        void getFilterResult(List<Map<String, Object>> list,Map nameResultMap,Map codeResultMap);
     }
 }

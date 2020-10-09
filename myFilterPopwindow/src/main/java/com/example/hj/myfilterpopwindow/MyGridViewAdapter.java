@@ -98,7 +98,11 @@ public class MyGridViewAdapter extends ArrayAdapter<MyFilter> {
                     }
                 }
                 myGridViewDataChangedListener.setData(list,tagName);
-                selectedText.setText(str.substring(0,str.length()-1));
+                if(!"".equals(str)){
+                    selectedText.setText(str.substring(0,str.length()-1));
+                }else{
+                    selectedText.setText("");
+                }
                 notifyDataSetChanged();
             }
         });
