@@ -14,7 +14,7 @@ allprojects {
   }
  //Add the dependency
  dependencies {
-  implementation 'com.github.hanjie511:FilterPopWindow:v1.0.0'
+  implementation 'com.github.hanjie511:FilterPopWindow:v1.1.0'
   }  
 ```  
 ### 通过Maven添加依赖  
