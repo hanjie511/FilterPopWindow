@@ -47,6 +47,7 @@ MyFilter myFilter=null;
 for(int i=0;i<10;i++){
   myFilter=new MyFilter();
   myFilter.setName("张三"+i);
+  myFilter.setCode("123");
   myFilter.setSelected(false);
   list1.add(myFilter);
   }
@@ -62,9 +63,10 @@ hj.showAtLocation(mainLinear, Gravity.RIGHT,0,0);
 ```java  
 hj.setHJFilterPopwindowDismisListener(new HJFilterPopWindow.HJFilterPopwindowDismisListener() {
 @Override
-public void getFilterResult(List<Map<String, Object>> list1, Map m) {
+public void getFilterResult(List<Map<String, Object>> list1, Map nameResultMap,Map codeResultMap) {
 // list1筛选后数据源
-//m筛选的结果
+//nameResultMap对应myFilter.setName的筛选的结果
+//codeResultMap对应myFilter.setCode的筛选的结果
 //获取选择结果的sample:
 String str="姓名："+m.get("姓名")+"\n";
 str=str+"颜色："+m.get("颜色")+"\n";
